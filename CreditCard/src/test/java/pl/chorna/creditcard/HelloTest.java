@@ -18,4 +18,19 @@ public class HelloTest {
         assert (5==result);
 
     }
+    @Test
+    void equationTestV2(){
+        //A / Arrange
+
+        int a = 2;
+        int b = 3;
+
+        //A / Act
+
+        var result = a + b;
+
+        //A / Assert
+        assert (10 == result);
+
+    }
 }
