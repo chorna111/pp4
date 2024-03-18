@@ -83,7 +83,7 @@ public class CreditCardTest {
 
         assertThrows(
                 NotEnoughMoneyException.class,
-                () -> card.pay(BigDecimal.valueOf(1200))
+                () -> card.pay(BigDecimal.valueOf(200))
         );
     }
 
