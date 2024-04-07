@@ -1,14 +1,13 @@
-package ecommerce.catalog;
+package pl.chorna.ecommerce.catalog;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 public class Product {
-
     private final String id;
     private final String name;
     private final String description;
-    private BigDecimal newPrice;
+    private BigDecimal price;
 
     public Product(UUID id, String name, String description) {
         this.id = id.toString();
@@ -21,11 +20,19 @@ public class Product {
     }
 
     public BigDecimal getPrice() {
-        return newPrice;
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void changePrice(BigDecimal newPrice) {
 
-        this.newPrice = newPrice;
+        this.price = newPrice;
     }
 }
