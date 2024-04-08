@@ -1,4 +1,4 @@
-package ecommerce.catalog;
+package pl.chorna.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
 import pl.chorna.ecommerce.catalog.Product;
