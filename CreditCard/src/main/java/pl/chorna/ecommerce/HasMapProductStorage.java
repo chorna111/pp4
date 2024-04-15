@@ -1,14 +1,11 @@
-package pl.chorna.ecommerce.catalog;
-
-import pl.chorna.ecommerce.catalog.Product;
-import pl.chorna.ecommerce.catalog.ProductStorage;
+package pl.chorna.ecommerce;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class HashMapProductStorage implements ProductStorage {
+public class HasMapProductStorage implements ProductStorage {
     HashMap<String,Product> products;
-    public HashMapProductStorage(){
+    public HasMapProductStorage(){
         products=new HashMap<>();
     }
 

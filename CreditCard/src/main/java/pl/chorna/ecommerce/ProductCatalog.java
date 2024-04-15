@@ -1,8 +1,7 @@
-package pl.chorna.ecommerce.catalog;
+package pl.chorna.ecommerce;
 
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,6 +12,7 @@ public class ProductCatalog {
 
 
     public ProductCatalog(ProductStorage productStorage) {
+
         this.productStorage = productStorage;
     }
 

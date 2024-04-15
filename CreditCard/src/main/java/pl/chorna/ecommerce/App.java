@@ -4,7 +4,6 @@ package pl.chorna.ecommerce;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import pl.chorna.ecommerce.catalog.ProductCatalog;
 
 @SpringBootApplication
 public class App {
@@ -15,7 +14,9 @@ public class App {
 
     @Bean
     ProductCatalog createMyProductCatalog() {
-        var catalog = new ProductCatalog();
+
+
+        var catalog = new ProductCatalog(new HasMapProductStorage());
         catalog.addProduct("Lego set 8083", "Nice one");
         catalog.addProduct("Cobi blocks", "Nice one");
         return catalog;

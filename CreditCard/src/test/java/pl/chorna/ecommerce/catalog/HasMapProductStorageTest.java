@@ -1,14 +1,15 @@
 package pl.chorna.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
-import pl.chorna.ecommerce.catalog.Product;
-import pl.chorna.ecommerce.catalog.ProductStorage;
+import pl.chorna.ecommerce.Product;
+import pl.chorna.ecommerce.ProductStorage;
+import pl.chorna.ecommerce.HasMapProductStorage;
 
 import java.util.List;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.*;
-public class HashMapProductStorageTest {
+public class HasMapProductStorageTest {
 
     private static final String TEST_PRODUCT_NAME = "test product";
 
@@ -30,7 +31,7 @@ public class HashMapProductStorageTest {
     }
 
     private ProductStorage thereIsProductStorage(){
-        return new HashMapProductStorage();
+        return new HasMapProductStorage();
     }
     @Test
     void itAllowsAllProducts(){

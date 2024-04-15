@@ -1,19 +1,19 @@
 package pl.chorna.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
-import pl.chorna.ecommerce.catalog.Product;
-import pl.chorna.ecommerce.catalog.ProductCatalog;
+import pl.chorna.ecommerce.ArrayListProductStorage;
+import pl.chorna.ecommerce.Product;
+import pl.chorna.ecommerce.ProductCatalog;
 
 import java.math.BigDecimal;
 import java.util.List;
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 
 public class ProductCatalogTest {
     @Test
     void itListAvailableProducts(){
-        ProductCatalog catalog=new ProductCatalog();
+        ProductCatalog catalog = getProductCatalog();
         List<Product> products=catalog.allProducts();
         assert products.isEmpty();
 
@@ -22,7 +22,7 @@ public class ProductCatalogTest {
     }
     @Test
     void itAllowsToAddProduct(){
-        ProductCatalog catalog=new ProductCatalog();
+        ProductCatalog catalog = getProductCatalog();
         catalog.addProduct("lego","jakiś tam  opis");
         List<Product> products=catalog.allProducts();
         assertThat(products)
@@ -31,16 +31,22 @@ public class ProductCatalogTest {
 
 
     }
+
+    private static ProductCatalog getProductCatalog() {
+        ProductCatalog catalog=new ProductCatalog(new ArrayListProductStorage());
+        return catalog;
+    }
+
     @Test
     void itLoadsSingleProductById(){
-        ProductCatalog catalog=new ProductCatalog();
+        ProductCatalog catalog = getProductCatalog();
         String id=catalog.addProduct("Lego","jakiś tam opis");
         Product loaded=catalog.getProductBy(id);
         assertThat(id).isEqualTo(loaded.getId());
     }
     @Test
     void itAllowsToChangePrice(){
-        ProductCatalog catalog=new ProductCatalog();
+        ProductCatalog catalog = getProductCatalog();
         String id=catalog.addProduct("Lego","jakiś tam opis");
         catalog.changePrice(id, BigDecimal.valueOf(10.10));
         Product loaded=catalog.getProductBy(id);

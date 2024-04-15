@@ -1,4 +1,4 @@
-package pl.chorna.ecommerce.catalog;
+package pl.chorna.ecommerce;
 
 import java.util.List;
 
