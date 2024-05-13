@@ -1,9 +1,9 @@
 package pl.chorna.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
-import pl.chorna.ecommerce.Product;
-import pl.chorna.ecommerce.ProductStorage;
-import pl.chorna.ecommerce.HasMapProductStorage;
+import pl.chorna.ecommerce.catalog.Product;
+import pl.chorna.ecommerce.catalog.ProductStorage;
+import pl.chorna.ecommerce.catalog.HasMapProductStorage;
 
 import java.util.List;
 import java.util.UUID;

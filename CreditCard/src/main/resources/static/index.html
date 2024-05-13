@@ -1,12 +1,34 @@
-<html>
+<html lang="en">
 <head>
-    <title>My Ecommerce</title>
-    <link rel="stylesheet" href="/css/main.css" />
+    <title>
+        My Ecommerce
+    </title>
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-<h1>Welcome to my Ecommerce app</h1>
-<p>src/main/resources/static/index.html</p>
 
-<script type="text/javascript" src="/js/main.js"></script>
+
+<h1>Welcome</h1>
+    <header>
+        <div class="offer">
+            Total: <span class="offer__total">0.0</span>
+            Items count: <span class="offer__itemsCount">0</span>
+            <form>
+                <input name="firstname" placeholder="John"/>
+                <input name="lastname" placeholder="Doe"/>
+                <input name="email" type="email" placeholder="john@example.com"/>
+                <button type="submit">Checkout</button>
+
+            </form>
+        </div>
+    </header>
+    <ul id="productsList" class="productsList"></ul>
+
+
+
 </body>
+
+
+<script type="text/javascript" src="js/main.js">
+</script>
 </html>

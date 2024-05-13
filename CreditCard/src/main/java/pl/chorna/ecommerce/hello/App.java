@@ -1,4 +1,4 @@
-package pl.chorna.creditcard;
+package pl.chorna.ecommerce.hello;
 
 import java.util.Collections;
 

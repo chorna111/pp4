@@ -1,9 +1,9 @@
 package pl.chorna.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
-import pl.chorna.ecommerce.ArrayListProductStorage;
-import pl.chorna.ecommerce.Product;
-import pl.chorna.ecommerce.ProductCatalog;
+import pl.chorna.ecommerce.catalog.ArrayListProductStorage;
+import pl.chorna.ecommerce.catalog.Product;
+import pl.chorna.ecommerce.catalog.ProductCatalog;
 
 import java.math.BigDecimal;
 import java.util.List;
