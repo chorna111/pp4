@@ -1,4 +1,4 @@
-package pl.chorna.ecommerce.catalog.sales;
+package pl.chorna.ecommerce.catalog.sales.order;
 
 import java.math.BigDecimal;
 

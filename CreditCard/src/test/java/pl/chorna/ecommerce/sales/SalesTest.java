@@ -1,5 +1,8 @@
-package pl.chorna.ecommerce.catalog.sales;
+package pl.chorna.ecommerce.sales;
 import org.junit.jupiter.api.Test;
+import pl.chorna.ecommerce.catalog.sales.offering.Offer;
+import pl.chorna.ecommerce.catalog.sales.ui.SalesFacade;
+
 import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import pl.chorna.ecommerce.catalog.HasMapProductStorage;
 import pl.chorna.ecommerce.catalog.ProductCatalog;
-import pl.chorna.ecommerce.catalog.sales.SalesFacade;
+import pl.chorna.ecommerce.catalog.sales.ui.SalesFacade;
 
 @SpringBootApplication
 public class App {
