@@ -6,7 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import pl.chorna.ecommerce.catalog.HasMapProductStorage;
 import pl.chorna.ecommerce.catalog.ProductCatalog;
-import pl.chorna.ecommerce.catalog.sales.ui.SalesFacade;
+import pl.chorna.ecommerce.catalog.sales.cart.CartStorage;
+import pl.chorna.ecommerce.catalog.sales.reservation.ReservationRepository;
+import pl.chorna.ecommerce.infrastructure.PayUPaymentGw;
+import pl.chorna.ecommerce.catalog.sales.offering.OfferCalculator;
+import pl.chorna.ecommerce.catalog.sales.SalesFacade;
 
 @SpringBootApplication
 public class App {
@@ -26,6 +30,6 @@ public class App {
     }
     @Bean
     SalesFacade createSales(){
-        return new SalesFacade();
+        return new SalesFacade(new CartStorage(), new OfferCalculator(), new PayUPaymentGw(), new ReservationRepository());
     }
 }

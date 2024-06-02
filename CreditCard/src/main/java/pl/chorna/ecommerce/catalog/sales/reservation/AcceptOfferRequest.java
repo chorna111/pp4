@@ -1,4 +1,4 @@
-package pl.chorna.ecommerce.catalog.sales.offering;
+package pl.chorna.ecommerce.catalog.sales.reservation;
 
 public class AcceptOfferRequest {
     String firstName;

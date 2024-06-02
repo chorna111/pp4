@@ -47,11 +47,11 @@ public class Cart {
         return productsQty.size();
     }
 
-    public List<CartLine> getLines() {
+    public List<CartItem> getItems() {
 
         return  productsQty.entrySet()
                 .stream()
-                .map(es->new CartLine(es.getKey(),es.getValue()))
+                .map(es->new CartItem(es.getKey(),es.getValue()))
                 .toList();
 
     }

@@ -1,10 +1,10 @@
 package pl.chorna.ecommerce.catalog.sales.cart;
 
-public class CartLine {
+public class CartItem {
     private  String productId;
     private Integer qty;
 
-    public CartLine(String productId, Integer qty){
+    public CartItem(String productId, Integer qty){
         this.productId=productId;
         this.qty=qty;
 
