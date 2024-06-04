@@ -19,7 +19,7 @@ public class ReservationDetails {
 
     }
 
-    public Object getReservationId() {
+    public String getReservationId() {
         return reservationId;
     }
 

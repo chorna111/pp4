@@ -2,7 +2,7 @@ package pl.chorna.ecommerce.sales.cart;
 import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import pl.chorna.ecommerce.catalog.sales.cart.Cart;
-import pl.chorna.ecommerce.catalog.sales.cart.CartLine;
+import pl.chorna.ecommerce.catalog.sales.cart.CartItem;
 
 import java.util.List;
 
@@ -68,7 +68,7 @@ public class CartTest {
         String productX=thereIsProduct("X");
         cart.addProduct(productX);
 
-        List<CartLine> lines=cart.getLines();
+        List<CartItem> lines=cart.getItems();
         assertCartContainsXAmountOfProduct(lines,productX,1);
 
 
@@ -81,7 +81,7 @@ public class CartTest {
         cart.addProduct(productX);
 
 
-        List<CartLine> lines=cart.getLines();
+        List<CartItem> lines=cart.getItems();
         assertCartContainsXAmountOfProduct(lines,productX,1);
 
 
@@ -101,7 +101,7 @@ public class CartTest {
         cart.addProduct(productY);
 
 
-        List<CartLine> lines=cart.getLines();
+        List<CartItem> lines=cart.getItems();
         assertCartContainsXAmountOfProduct(lines,productX,3);
 
         assertCartContainsXAmountOfProduct(lines,productY,1);
@@ -109,7 +109,7 @@ public class CartTest {
 
     }
 
-    private void assertCartContainsXAmountOfProduct(List<CartLine> lines, String productId, int expectedQuantity) {
+    private void assertCartContainsXAmountOfProduct(List<CartItem> lines, String productId, int expectedQuantity) {
         assertThat(lines)
                 .filteredOn(cartLine->cartLine.getProductId().equals(productId))
                 .extracting(cartLine->cartLine.getQty())

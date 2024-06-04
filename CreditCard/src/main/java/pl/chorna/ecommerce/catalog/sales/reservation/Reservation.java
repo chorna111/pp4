@@ -4,6 +4,7 @@ import pl.chorna.ecommerce.catalog.sales.offering.Offer;
 import pl.chorna.ecommerce.catalog.sales.payment.PaymentDetails;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 
 public class Reservation {
     private final BigDecimal total;
