@@ -19,15 +19,17 @@ public class SalesController {
         var customerId = getCurrentCustomerId();
         return sales.getCurrentOffer(customerId);
     }
-    @PostMapping("/api/accept-offer")
-    ReservationDetails acceptOffer(@RequestBody AcceptOfferRequest acceptOfferRequest){
-        var customerId = getCurrentCustomerId();
-        return sales.acceptOffer(customerId,acceptOfferRequest);
-    }
+
     @PostMapping("/api/add-to-cart/{productId}")
     void addToCart(@PathVariable(name="productId") String productId){
         var customerId=getCurrentCustomerId();
         sales.addProduct(customerId,productId);
+    }
+    @PostMapping("/api/accept-offer")
+    ReservationDetails acceptOffer(@RequestBody AcceptOfferRequest acceptOfferRequest){
+        var customerId = getCurrentCustomerId();
+        ReservationDetails reservationDetails=sales.acceptOffer(customerId,acceptOfferRequest);
+        return reservationDetails;
     }
 
     private String getCurrentCustomerId(){

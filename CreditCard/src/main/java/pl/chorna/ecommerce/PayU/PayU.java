@@ -5,11 +5,18 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
+import pl.chorna.ecommerce.catalog.sales.payment.PaymentDetails;
+import pl.chorna.ecommerce.catalog.sales.payment.PaymentGateway;
+import pl.chorna.ecommerce.catalog.sales.payment.RegisterPaymentRequest;
+
+import java.util.Arrays;
+import java.util.UUID;
 
 
+public class PayU implements PaymentGateway {
+    RestTemplate http;
+    private final PayUCredentials credentials;
 
-public class PayU {
-    PayUCredentials credentials;
     public PayU(RestTemplate http,PayUCredentials credentials) {
         this.http = http;
         this.credentials=credentials;
@@ -20,11 +27,11 @@ public class PayU {
 
 
 
-    RestTemplate http;
+
 
 
     public OrderCreateResponse handle(OrderCreateRequest request) {
-        var url=String.format("%s/api/v2_1/orders",credentials.getBaseUrl());
+        var url=String.format("%s/api/v2_1/orders", credentials.getBaseUrl());
         var headers=new HttpHeaders();
 
         headers.add("Content-Type","application/json");
@@ -52,5 +59,32 @@ public class PayU {
         return response.getBody().getAccessToken();
 
 
+    }
+    @Override
+    public PaymentDetails registerPayment(RegisterPaymentRequest registerPaymentRequest) {
+        var request = new OrderCreateRequest();
+        request
+                .setNotifyUrl("https://my.example.shop.chorna.pl/api/order")
+                .setCustomerIp("127.0.0.1")
+                .setMerchantPosId("300746")
+                .setDescription("My ebook")
+                .setCurrencyCode("PLN")
+                .setTotalAmount(registerPaymentRequest.getTotalAsPennies())
+                .setExtOrderId(UUID.randomUUID().toString())
+                .setBuyer((new Buyer())
+                        .setEmail(registerPaymentRequest.getEmail())
+                        .setFirstName(registerPaymentRequest.getFirstname())
+                        .setLastName(registerPaymentRequest.getLastname())
+                        .setLanguage("pl")
+                )
+                .setProducts(Arrays.asList(
+                        new Product()
+                                .setName("produkt")
+                                .setQuantity(1)
+                                .setUnitPrice(210000)
+                ));
+
+        OrderCreateResponse response = this.handle(request);
+        return new PaymentDetails(response.getRedirectUri(), response.getOrderId());
     }
 }

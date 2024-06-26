@@ -22,15 +22,15 @@ public class OrderCreateResponse {
     String extOrderId;
 
 
-    public Object getRedirectUri() {
+    public String getRedirectUri() {
           return redirectUri;
     }
 
-    public Object getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public Object getExtOrderId() {
+    public String getExtOrderId() {
         return extOrderId;
     }
 }

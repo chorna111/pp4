@@ -11,7 +11,6 @@ import pl.chorna.ecommerce.catalog.sales.reservation.AcceptOfferRequest;
 import pl.chorna.ecommerce.catalog.sales.reservation.Reservation;
 import pl.chorna.ecommerce.catalog.sales.reservation.ReservationDetails;
 import pl.chorna.ecommerce.catalog.sales.reservation.ReservationRepository;
-
 import java.util.UUID;
 
 public class SalesFacade {
@@ -29,8 +28,22 @@ public class SalesFacade {
     }
 
     public Offer getCurrentOffer(String customerId) {
-        Cart cart=loadCartForCustomer(customerId);
+        ///Cart cart=loadCartForCustomer(customerId);
+        Cart cart = cartStorage.findByCustomer(customerId)
+                .orElse(Cart.empty());
         return OfferCalculator.calculate(cart.getItems());
+    }
+    public void addProduct(String customerId, String productId) {
+        Cart cart = loadCartForCustomer(customerId);
+
+        cart.addProduct(productId);
+        cartStorage.save(customerId,cart);
+
+
+    }
+    private Cart loadCartForCustomer(String customerId) {
+        return cartStorage.findByCustomer(customerId)
+                .orElse(Cart.empty());
     }
 
     public ReservationDetails acceptOffer(String customerId, AcceptOfferRequest acceptOfferRequest) {
@@ -41,21 +54,4 @@ public class SalesFacade {
         reservationRepository.add(reservation);
         return new ReservationDetails(reservationId,paymentDetails.getPaymentUrl());
     }
-    public void addProduct(String customerId, String productId) {
-        Cart cart = loadCartForCustomer(customerId);
-
-        cart.addProduct(productId);
-
-    }
-    private Cart loadCartForCustomer(String customerId) {
-        return cartStorage.findByCustomer(customerId)
-                .orElse(Cart.empty());
-    }
-
-
-
-
-
-
-
 }

@@ -2,8 +2,12 @@ package pl.chorna.ecommerce.PayU;
 
 public class AuthorizationResponse {
     String access_token;
+    public String getAccessToken(){
+        return access_token;
 
-    public String getAccess_token() {
+    }
+
+    public String getAccess_token(){
         return access_token;
     }
 
@@ -11,7 +15,5 @@ public class AuthorizationResponse {
         this.access_token = access_token;
         return this;
     }
-    public String getAccessToken(){
-        return access_token;
-    }
+
 }

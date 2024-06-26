@@ -2,8 +2,11 @@ package pl.chorna.ecommerce.catalog.sales.payment;
 
 public class PaymentDetails {
     private final String url;
-    public PaymentDetails(String url){
+    private final String id;
+    public PaymentDetails(String url, String id){
         this.url=url;
+        this.id=id;
+
 
     }
     public String getPaymentUrl() {
