@@ -1,41 +1,32 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>
-        My Ecommerce
-    </title>
+    <title>My Ecommerce</title>
     <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-
-
 <h1>Welcome</h1>
-    <header>
-        <div class="offer">
-            <div>
+<header>
+    <div class="offer">
+        <div class="offer__details">
+            <div class="offer__item">
                 <span>Total:</span>
                 <span id="offer__total">0.0</span>
             </div>
-            <div>
+            <div class="offer__item">
                 <span>Items count:</span>
                 <span id="offer__items-count">0</span>
             </div>
-            <form id="checkout">
-                <input name="first_name" placeholder="John"/>
-                <input name="lastname_name" placeholder="Doe"/>
-                <input name="email" type="email" placeholder="john@example.com"/>
-                <button type="submit">Accept offer</button>
-
-            </form>
-
         </div>
-    </header>
-    <ul id="productsList" class="productsList"></ul>
-
-
-
+        <form id="checkout">
+            <input name="first_name" placeholder="John"/>
+            <input name="lastname_name" placeholder="Doe"/>
+            <input name="email" type="email" placeholder="john@example.com"/>
+            <button type="submit">Accept offer</button>
+        </form>
+    </div>
+</header>
+<ul id="productsList" class="productsList"></ul>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
-
-
-<script type="text/javascript" src="js/main.js">
-</script>
 </html>

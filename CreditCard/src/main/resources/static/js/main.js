@@ -35,9 +35,9 @@ const createHtmlEl = (productData) => {
     const template = `
         <div class="product">
             <h4>${productData.name}</h4>
-            <img src="https://picsum.photos/id/237/200/300"/>
+            <img src="${productData.url}">
             <div class="product__price">
-                <span>${productData.price}</span>
+                <span>${productData.price} PLN</span>
                 <button data-id="${productData.id}">Add to cart</button>
             </div>
         </div>

@@ -44,7 +44,7 @@ public class PayU implements PaymentGateway {
         return response.getBody();
     }
 
-    private Object getToken() {
+     private Object getToken() {
         String body=String.format(
                 "grant_type=client_credentials&client_id=%s&client_secret=%s",
                 credentials.getClientId(),

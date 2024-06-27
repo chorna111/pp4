@@ -45,7 +45,7 @@ public class RegisterPaymentRequest {
         this.acceptOfferRequest = acceptOfferRequest;
         this.total = total;
         this.firstname = acceptOfferRequest.getFirstName();
-        this.lastname = acceptOfferRequest.getFirstName();
+        this.lastname = acceptOfferRequest.getLastName();
         this.email = acceptOfferRequest.getEmail();
     }
 

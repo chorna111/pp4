@@ -1,4 +1,139 @@
-body {
-    background: green
+h1 {
+    padding: 10px;
+    color: #5F9EA0;
+
+    margin: 10px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    width: 50%;
+
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F8FF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #5F9EA0;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #5F9EA0;
+}
+
+.offer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.offer__details {
+    color: #F0F8FF;
+    margin: 60px;
+    display: flex;
+    text-align:center;
+
+    flex-direction: column;
+    border: 2px solid #F0F8FF;
+    width:200px;
+    font-size: 18px;
+    color: #FFFAFA;
+}
+.offer__details:hover{
+    background-color:#F0F8FF;
+    color: #5F9EA0;
+}
+
+.offer__item {
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+.offer span {
+    font-weight: bold;
+}
+
+#checkout {
+    margin-right:60px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+#checkout input {
+    border:none;
+    background-color: #F0F8FF;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#checkout button {
+    padding: 12px;
+    background-color: #F0F8FF;
+    color: #5F9EA0;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#checkout button:hover {
+    background-color: #AFEEEE;
+}
+
+.productsList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #F5FFFA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product h4 {
+    color: #5F9EA0;
+    text-align: center;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #5F9EA0;
+}
+
+.product__price span {
+    font-weight: bold;
+}
+
+.product__price button {
+    padding: 8px;
+    background-color: #5F9EA0;
+    color: #F0F8FF;
+    border: none;
+    cursor: pointer;
+}
+
+.product__price button:hover {
+    background-color: #AFEEEE;
+}
